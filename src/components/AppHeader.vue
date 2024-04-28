@@ -9,10 +9,16 @@
           <CNavLink href="/dashboard"> Dashboard </CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink href="#">Users</CNavLink>
+          <CNavLink href="/tenants">Tenants</CNavLink>
         </CNavItem>
         <CNavItem>
-          <CNavLink href="#">Settings</CNavLink>
+          <CNavLink href="/apartments">Apartments</CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink href="/lease">Lease</CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink href="/reports">Report</CNavLink>
         </CNavItem>
       </CHeaderNav>
       <CHeaderNav class="ms-auto">
@@ -78,21 +84,16 @@
         <AppHeaderDropdownAccnt />
       </CHeaderNav>
     </CContainer>
-    <CContainer class="px-4" fluid>
-      <AppBreadcrumb />
-    </CContainer>
   </CHeader>
 </template>
 
 <script>
 import { onMounted, ref } from 'vue'
 import { useColorModes } from '@coreui/vue'
-import AppBreadcrumb from './AppBreadcrumb'
 import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt'
 export default {
   name: 'AppHeader',
   components: {
-    AppBreadcrumb,
     AppHeaderDropdownAccnt,
   },
   setup() {

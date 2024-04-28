@@ -15,7 +15,9 @@
     "dev": "vite --force",
     "build": "vite build",
     "lint": "eslint \"src/**/*.{js,vue}\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vue-cli-service serve",
+    "scriptname": "cmd"
   },
   "dependencies": {
     "@coreui/chartjs": "^4.0.0",
@@ -26,7 +28,11 @@
     "@coreui/vue": "^5.0.0",
     "@coreui/vue-chartjs": "^3.0.0",
     "@popperjs/core": "^2.11.8",
+    "@vue/cli-service": "^5.0.8",
+    "axios": "^1.6.8",
     "chart.js": "^4.4.2",
+    "cors": "^2.8.5",
+    "moment": "^2.30.1",
     "simplebar-vue": "^2.3.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
@@ -38,7 +44,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.24.0",
     "postcss": "^8.4.38",
-    "sass": "^1.72.0",
+    "sass": "^1.75.0",
+    "sass-loader": "^14.2.1",
     "vite": "^5.2.6"
   }
 }

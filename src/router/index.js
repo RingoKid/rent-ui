@@ -1,14 +1,19 @@
 import { h, resolveComponent } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import DefaultLayout from '@/layouts/DefaultLayout'
+import Tenants from "../views/TenantList.vue";
+import ApartmentDetail from "../views/ApartmentDetail.vue";
+import CreateTenant from "../views/CreateTenant.vue";
+import UpdateTenant from "../views/UpdateTenant.vue";
+import CreateApartment from "../views/CreateApartment.vue";
+import LeaseList from "../views/LeaseList.vue";
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: DefaultLayout,
-    redirect: '/dashboard',
     children: [
       {
         path: '/dashboard',
@@ -20,6 +25,56 @@ const routes = [
           import(
             /* webpackChunkName: "dashboard" */ '@/views/dashboard/Dashboard.vue'
           ),
+      },
+      {
+        path: '/tenants',
+        name: 'Tenants',
+        component: Tenants
+      },
+      {
+        path: '/tenant-detail/:tenant_id',
+        name: 'TenantDetail',
+        component: () => import('@/views/TenantDetail.vue')
+      },
+      {
+        path: '/apartments',
+        name: 'Apartments',
+        component: () => import('@/views/ApartmentList.vue'),
+      },
+      {
+        path: '/apartments/:apartment_id',
+        name: 'ApartmentDetail',
+        component: ApartmentDetail
+      },
+     {
+        path: '/create-tenant',
+        name: 'CreateTenant',
+        component: CreateTenant
+      },
+      {
+        path: '/update-tenant/:tenant_id',
+        name: 'UpdateTenant',
+        component: UpdateTenant
+      },
+      {
+        path: '/create-apartment',
+        name: 'CreateApartment',
+        component: CreateApartment
+      },
+      {
+        path: '/lease',
+        name: 'LeaseList',
+        component: LeaseList
+      },
+      {
+        path: '/leases/:id',
+        name: 'LeaseDetail',
+        component: () => import('@/views/LeaseDetail.vue'),
+      },
+      {
+        path: '/reports',
+        name: 'Reports',
+        component: () => import('@/views/Reports.vue'),
       },
       {
         path: '/theme',
@@ -303,7 +358,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  // eslint-disable-next-line no-undef
+  history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior() {
     // always scroll to top
